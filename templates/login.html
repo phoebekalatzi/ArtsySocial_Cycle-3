@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+{% from 'macros.html' import render_field %}
+
+{% block content %}
+
+
+                <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>Login to ArtsySocial</h3>
+                            		<p>Enter your username and password to log in:</p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-lock"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+                                <script>
+                                    {% if showAlert %}
+                                        alert('{{ alertMsg }}')
+                                    {% endif %}
+                                </script>
+			                    <form role="form" action="" method="post" class="login-form">
+                      <form method="POST" action="" class="form" autocomplete="off">
+                      {{ form.hidden_tag() }}
+                      {% for field in form %}
+                      {{ render_field(field) }}
+                      {% endfor %}
+                       <div class="g-recaptcha" data-sitekey="{{siteKey}}">
+                       <button type="submit" id="submit" class="btn">Sign in!</button>
+                       <p id="not-reg"><a href="{{url_for('register')}}"><u>Not register yet? Click
+                       here</u></a></p>
+                       </form>  
+			                  	</form>
+		                    </div>
+                        </div> 
+                    </div>
+
+{% endblock %}
+                           
+                           
+                           
+                           			                			

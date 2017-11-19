@@ -1,0 +1,19 @@
+<html>
+<head>
+
+    <title>Human Verification</title>
+</head>
+<body>
+<script>
+    {% if showAlert %}
+        alert('{{ alertMsg }}')
+    {% endif %}
+</script>
+<form method=post action="{{url_for('captcha')}}">
+    <div class="g-recaptcha" data-sitekey="{{siteKey}}"></div>
+    <input type=submit value=send>
+</form>
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
+</body>
+</html>

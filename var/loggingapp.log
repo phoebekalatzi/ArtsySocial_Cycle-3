@@ -1,0 +1,7 @@
+INFO | 2017-11-19 17:25:20,495 | index | login | Anonymous user visited the Login page /login
+INFO | 2017-11-19 17:25:24,276 | index | login | Anonymous user visited the Login page /login
+INFO | 2017-11-19 17:25:37,323 | index | login | Anonymous user visited the Login page /login
+INFO | 2017-11-19 17:25:37,698 | index | login | A second active session was found for the user: helena
+INFO | 2017-11-19 17:25:37,714 | index | profile | helena viewed his/her personal Profile page /myprofile
+INFO | 2017-11-19 17:25:39,561 | index | logout | helena requested to logout /logout
+INFO | 2017-11-19 17:25:39,581 | index | login | Anonymous user visited the Login page /login
