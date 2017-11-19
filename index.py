@@ -87,6 +87,7 @@ def after_request(response):
   response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains; preload"
   response.headers["Cache-Control"] = "post-check=0, pre-check=0, false, no-store, no-cache, must-revalidate"
   response.headers["Pragma"] = "no-cache"
+  response.headers["X-Frame-Options"] = "SAMEORIGIN"
   return response
 
 # setting up the Content-Length header as a decorator for our views
