@@ -51,10 +51,10 @@ app.config['SESSION_COOKIE_PATH'] = '/'
 app.config['SESSION_COOKIE_SECURE'] = True
 app.config['SESSION_COOKIE_HTTPONLY'] = True
 
+
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
-login_manager.session_protection = 'strong'
 login_manager.anonymous_user = models.Anonymous
 
 @login_manager.user_loader
@@ -341,7 +341,7 @@ def login():
               app.logger.info("User does not exist")
           else:
             if check_password_hash(user.password, form.password.data):
-              login_user(user, remember = False)
+              login_user(user)
               try:
                   models.TrackSessions.create(
                       userID=g.user._get_current_object(),
@@ -439,9 +439,9 @@ def logout():
       pass
   else:
       pass
+  session.clear()
   logout_user()
   flash("You've been logged out. Come back soon!","success")
-  session.clear()
   return redirect(url_for('login'))
 
 # parsing configuration details from an external file
